@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="monospace" font-size="14">
+<rect width="1000" height="640" fill="#fff"/>
+<text x="40" y="40" font-size="18">Эмуляция энкодера сушилки: 3 x PC817 (оптопары)</text>
+<rect x="40" y="80" width="140" height="480" fill="none" stroke="#000" stroke-width="2"/>
+<text x="60" y="105">ESP32</text>
+<text x="170" y="115" text-anchor="end">GPIO25</text>
+<text x="170" y="215" text-anchor="end">GPIO26</text>
+<text x="170" y="415" text-anchor="end">GPIO27</text>
+<text x="170" y="525" text-anchor="end">GND</text>
+<line x1="180" y1="110" x2="250" y2="110" stroke="#000" stroke-width="2"/>
+<rect x="250" y="100" width="60" height="20" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="280" y="95" text-anchor="middle">R1 1.2k</text>
+<line x1="310" y1="110" x2="380" y2="110" stroke="#000" stroke-width="2"/>
+<line x1="180" y1="210" x2="250" y2="210" stroke="#000" stroke-width="2"/>
+<rect x="250" y="200" width="60" height="20" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="280" y="195" text-anchor="middle">R2 1.2k</text>
+<path d="M310,210 H330 Q340,196 350,210 H380" fill="none" stroke="#000" stroke-width="2"/>
+<line x1="180" y1="410" x2="250" y2="410" stroke="#000" stroke-width="2"/>
+<rect x="250" y="400" width="60" height="20" fill="#fff" stroke="#000" stroke-width="2"/>
+<text x="280" y="395" text-anchor="middle">R3 1.2k</text>
+<path d="M310,410 H330 Q340,396 350,410 H380" fill="none" stroke="#000" stroke-width="2"/>
+<line x1="180" y1="520" x2="340" y2="520" stroke="#000" stroke-width="2"/>
+<line x1="340" y1="520" x2="340" y2="150" stroke="#000" stroke-width="2"/>
+<line x1="340" y1="150" x2="380" y2="150" stroke="#000" stroke-width="2"/>
+<line x1="340" y1="250" x2="380" y2="250" stroke="#000" stroke-width="2"/>
+<line x1="340" y1="450" x2="380" y2="450" stroke="#000" stroke-width="2"/>
+<circle cx="340" cy="150" r="4" fill="#000"/><circle cx="340" cy="250" r="4" fill="#000"/>
+<circle cx="340" cy="450" r="4" fill="#000"/><circle cx="340" cy="520" r="4" fill="#000"/>
+<rect x="380" y="80" width="100" height="100" fill="none" stroke="#000" stroke-width="2"/>
+<text x="430" y="125" text-anchor="middle">U1</text><text x="430" y="145" text-anchor="middle">PC817</text>
+<text x="388" y="115">1</text><text x="388" y="155">2</text><text x="466" y="115">4</text><text x="466" y="155">3</text>
+<rect x="380" y="180" width="100" height="100" fill="none" stroke="#000" stroke-width="2"/>
+<text x="430" y="225" text-anchor="middle">U2</text><text x="430" y="245" text-anchor="middle">PC817</text>
+<text x="388" y="215">1</text><text x="388" y="255">2</text><text x="466" y="215">4</text><text x="466" y="255">3</text>
+<rect x="380" y="380" width="100" height="100" fill="none" stroke="#000" stroke-width="2"/>
+<text x="430" y="425" text-anchor="middle">U3</text><text x="430" y="445" text-anchor="middle">PC817</text>
+<text x="388" y="415">1</text><text x="388" y="455">2</text><text x="466" y="415">4</text><text x="466" y="455">3</text>
+<line x1="480" y1="110" x2="800" y2="110" stroke="#000" stroke-width="2"/>
+<path d="M480,210 H510 Q520,196 530,210 H800" fill="none" stroke="#000" stroke-width="2"/>
+<line x1="480" y1="150" x2="520" y2="150" stroke="#000" stroke-width="2"/>
+<line x1="520" y1="150" x2="520" y2="310" stroke="#000" stroke-width="2"/>
+<line x1="480" y1="250" x2="520" y2="250" stroke="#000" stroke-width="2"/>
+<circle cx="520" cy="250" r="4" fill="#000"/>
+<line x1="520" y1="310" x2="800" y2="310" stroke="#000" stroke-width="2"/>
+<line x1="480" y1="410" x2="800" y2="410" stroke="#000" stroke-width="2"/>
+<line x1="480" y1="450" x2="800" y2="450" stroke="#000" stroke-width="2"/>
+<rect x="800" y="80" width="160" height="480" fill="none" stroke="#000" stroke-width="2"/>
+<text x="810" y="100">ЭНКОДЕР</text><text x="810" y="118">платы сушилки</text>
+<text x="810" y="215">A (крайний)</text><text x="810" y="315">C (средний)</text>
+<text x="810" y="415">SW1 (кнопка)</text><text x="810" y="455">SW2 (кнопка)</text>
+<text x="810" y="115"> </text>
+<text x="40" y="600">Точка = соединение. Дуга = пересечение БЕЗ соединения.</text>
+<text x="40" y="620">Земли ESP и платы сушилки НЕ соединяются (развязка оптопарами).</text>
+</svg>
