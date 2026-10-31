@@ -1,0 +1,11 @@
+**/secrets.yaml
+**/secrets.yml
+.esphome/
+.playwright-mcp/
+.venv/
+__pycache__/
+build/
+.pio/
+*.bin
+*.elf
+*.map

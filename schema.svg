@@ -1,54 +1,174 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="monospace" font-size="14">
-<rect width="1000" height="640" fill="#fff"/>
-<text x="40" y="40" font-size="18">Эмуляция энкодера сушилки: 3 x PC817 (оптопары)</text>
-<rect x="40" y="80" width="140" height="480" fill="none" stroke="#000" stroke-width="2"/>
-<text x="60" y="105">ESP32</text>
-<text x="170" y="115" text-anchor="end">GPIO25</text>
-<text x="170" y="215" text-anchor="end">GPIO26</text>
-<text x="170" y="415" text-anchor="end">GPIO27</text>
-<text x="170" y="525" text-anchor="end">GND</text>
-<line x1="180" y1="110" x2="250" y2="110" stroke="#000" stroke-width="2"/>
-<rect x="250" y="100" width="60" height="20" fill="#fff" stroke="#000" stroke-width="2"/>
-<text x="280" y="95" text-anchor="middle">R1 1.2k</text>
-<line x1="310" y1="110" x2="380" y2="110" stroke="#000" stroke-width="2"/>
-<line x1="180" y1="210" x2="250" y2="210" stroke="#000" stroke-width="2"/>
-<rect x="250" y="200" width="60" height="20" fill="#fff" stroke="#000" stroke-width="2"/>
-<text x="280" y="195" text-anchor="middle">R2 1.2k</text>
-<path d="M310,210 H330 Q340,196 350,210 H380" fill="none" stroke="#000" stroke-width="2"/>
-<line x1="180" y1="410" x2="250" y2="410" stroke="#000" stroke-width="2"/>
-<rect x="250" y="400" width="60" height="20" fill="#fff" stroke="#000" stroke-width="2"/>
-<text x="280" y="395" text-anchor="middle">R3 1.2k</text>
-<path d="M310,410 H330 Q340,396 350,410 H380" fill="none" stroke="#000" stroke-width="2"/>
-<line x1="180" y1="520" x2="340" y2="520" stroke="#000" stroke-width="2"/>
-<line x1="340" y1="520" x2="340" y2="150" stroke="#000" stroke-width="2"/>
-<line x1="340" y1="150" x2="380" y2="150" stroke="#000" stroke-width="2"/>
-<line x1="340" y1="250" x2="380" y2="250" stroke="#000" stroke-width="2"/>
-<line x1="340" y1="450" x2="380" y2="450" stroke="#000" stroke-width="2"/>
-<circle cx="340" cy="150" r="4" fill="#000"/><circle cx="340" cy="250" r="4" fill="#000"/>
-<circle cx="340" cy="450" r="4" fill="#000"/><circle cx="340" cy="520" r="4" fill="#000"/>
-<rect x="380" y="80" width="100" height="100" fill="none" stroke="#000" stroke-width="2"/>
-<text x="430" y="125" text-anchor="middle">U1</text><text x="430" y="145" text-anchor="middle">PC817</text>
-<text x="388" y="115">1</text><text x="388" y="155">2</text><text x="466" y="115">4</text><text x="466" y="155">3</text>
-<rect x="380" y="180" width="100" height="100" fill="none" stroke="#000" stroke-width="2"/>
-<text x="430" y="225" text-anchor="middle">U2</text><text x="430" y="245" text-anchor="middle">PC817</text>
-<text x="388" y="215">1</text><text x="388" y="255">2</text><text x="466" y="215">4</text><text x="466" y="255">3</text>
-<rect x="380" y="380" width="100" height="100" fill="none" stroke="#000" stroke-width="2"/>
-<text x="430" y="425" text-anchor="middle">U3</text><text x="430" y="445" text-anchor="middle">PC817</text>
-<text x="388" y="415">1</text><text x="388" y="455">2</text><text x="466" y="415">4</text><text x="466" y="455">3</text>
-<line x1="480" y1="110" x2="800" y2="110" stroke="#000" stroke-width="2"/>
-<path d="M480,210 H510 Q520,196 530,210 H800" fill="none" stroke="#000" stroke-width="2"/>
-<line x1="480" y1="150" x2="520" y2="150" stroke="#000" stroke-width="2"/>
-<line x1="520" y1="150" x2="520" y2="310" stroke="#000" stroke-width="2"/>
-<line x1="480" y1="250" x2="520" y2="250" stroke="#000" stroke-width="2"/>
-<circle cx="520" cy="250" r="4" fill="#000"/>
-<line x1="520" y1="310" x2="800" y2="310" stroke="#000" stroke-width="2"/>
-<line x1="480" y1="410" x2="800" y2="410" stroke="#000" stroke-width="2"/>
-<line x1="480" y1="450" x2="800" y2="450" stroke="#000" stroke-width="2"/>
-<rect x="800" y="80" width="160" height="480" fill="none" stroke="#000" stroke-width="2"/>
-<text x="810" y="100">ЭНКОДЕР</text><text x="810" y="118">платы сушилки</text>
-<text x="810" y="215">A (крайний)</text><text x="810" y="315">C (средний)</text>
-<text x="810" y="415">SW1 (кнопка)</text><text x="810" y="455">SW2 (кнопка)</text>
-<text x="810" y="115"> </text>
-<text x="40" y="600">Точка = соединение. Дуга = пересечение БЕЗ соединения.</text>
-<text x="40" y="620">Земли ESP и платы сушилки НЕ соединяются (развязка оптопарами).</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1360" viewBox="0 0 1400 1360" role="img" aria-labelledby="title" aria-describedby="desc" lang="ru" xml:lang="ru">
+  <title id="title">SpacePi — схема подключения ESP32-C3 SuperMini, PC817C и SHT40 / SHT41</title>
+  <desc id="desc">Текущая сборка: свободные площадки сушилки с измеренными 3,3 В напрямую питают 3V3 ESP и VCC датчика; 0 В сушилки соединён с GND ESP и датчика. GPIO3 — SDA, GPIO4 — SCL; SHT40 / SHT41, sht4x, адрес 0x44, нагреватель выключен. GPIO5 через R1 1,2 кОм подключён к U1.1, GPIO6 через R2 1,2 кОм к U2.1, GPIO7 через R3 1,2 кОм к U3.1. U1.2, U2.2 и U3.2 подключены к GND ESP. U1.4 — A, U2.4 — B, U1.3 и U2.3 — C, общий энкодера. U3.4 — SW+, вывод кнопки с более высоким потенциалом; U3.3 — SW-, с более низким. На адаптере кнопка не соединяется с C. У PC817C pin 4 — коллектор, pin 3 — эмиттер. Общая земля означает отсутствие гальванической развязки между платами, несмотря на оптопары. USB подключать только после отсоединения всех проводов адаптера от сушилки; USB и внешние 3,3 В одновременно не подавать. Питание 3,3 В не подключать к 5V или VBUS. Площадки сушилки и физический порядок выводов модулей не показаны.</desc>
+  <defs>
+    <style>
+      text { font-family: 'Segoe UI', 'DejaVu Sans', Arial, sans-serif; font-size: 18px; fill: #172033; }
+      .title { font-size: 32px; font-weight: 700; }
+      .subtitle { font-size: 18px; fill: #475569; }
+      .heading { font-size: 20px; font-weight: 700; }
+      .label { font-size: 18px; }
+      .small { font-size: 16px; fill: #475569; }
+      .mono { font-family: Consolas, 'DejaVu Sans Mono', monospace; font-size: 18px; }
+      .net { font-family: Consolas, 'DejaVu Sans Mono', monospace; font-size: 18px; font-weight: 700; }
+      .input-text { fill: #2563eb; }
+      .output-text { fill: #c2410c; }
+      .input { fill: none; stroke: #2563eb; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .output { fill: none; stroke: #c2410c; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .panel { fill: #fff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .body { fill: #334155; stroke: #172033; stroke-width: 2; }
+      .pin { fill: #fff; font-family: Consolas, 'DejaVu Sans Mono', monospace; font-size: 16px; }
+      .part { fill: #fff; font-size: 20px; font-weight: 700; }
+      .part-type { fill: #fff; font-size: 16px; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="1360" fill="#f8fafc"/>
+  <text x="60" y="60" class="title">SpacePi · схема текущего подключения</text>
+  <text x="60" y="96" class="subtitle">ESP32-C3 SuperMini · 3 × PC817C · SHT40 / SHT41 · прямое питание 3,3 В</text>
+  <text x="60" y="127" class="small">Функциональная схема: расположение площадок и порядок выводов модулей не показаны.</text>
+
+  <rect x="60" y="150" width="1280" height="84" rx="12" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
+  <text x="84" y="181" class="heading">Общая земля — гальванической развязки между платами нет</text>
+  <text x="84" y="211" class="label">0 В сушилки, GND ESP и GND датчика соединены. Оптопары не изолируют платы при таком питании.</text>
+
+  <g id="power">
+    <rect x="60" y="254" width="620" height="374" rx="12" class="panel"/>
+    <text x="84" y="290" class="heading">01 · Питание напрямую от сушилки</text>
+    <text x="84" y="321" class="subtitle">Свободные площадки: измерено 3,3 В</text>
+    <rect x="84" y="354" width="240" height="146" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+    <text x="108" y="386" class="heading">Сушилка · площадки</text>
+    <text x="304" y="420" text-anchor="end" class="mono">3,3 В</text>
+    <text x="304" y="476" text-anchor="end" class="mono">0 В</text>
+    <rect x="480" y="354" width="176" height="146" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="568" y="386" text-anchor="middle" class="heading">ESP32-C3</text>
+    <text x="500" y="420" class="net input-text">3V3</text>
+    <text x="500" y="476" class="net input-text">GND</text>
+    <path id="power-3v3" class="input" d="M324 414 H480"/>
+    <path id="power-gnd" class="input" d="M324 470 H480"/>
+    <text x="402" y="401" text-anchor="middle" class="net input-text">3V3</text>
+    <text x="402" y="457" text-anchor="middle" class="net input-text">GND</text>
+    <g fill="#2563eb">
+      <circle cx="324" cy="414" r="4"/>
+      <circle cx="480" cy="414" r="4"/>
+      <circle cx="324" cy="470" r="4"/>
+      <circle cx="480" cy="470" r="4"/>
+    </g>
+    <text x="84" y="535" class="label">3,3 В → только 3V3 ESP, не 5V / VBUS.</text>
+    <text x="84" y="563" class="small">Без DC/DC; датчик питается от тех же сетей 3V3 / GND.</text>
+    <text x="84" y="591" class="small">Расположение штатных площадок неизвестно.</text>
+  </g>
+
+  <g id="sensor">
+    <rect x="700" y="254" width="640" height="374" rx="12" class="panel"/>
+    <text x="724" y="290" class="heading">02 · Датчик и I²C</text>
+    <text x="724" y="321" class="subtitle">SHT40 / SHT41 · sht4x · адрес 0x44</text>
+    <rect x="1070" y="344" width="246" height="202" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="832" y="376" text-anchor="end" class="net input-text">3V3</text>
+    <text x="832" y="426" text-anchor="end" class="net input-text">GND</text>
+    <text x="832" y="476" text-anchor="end" class="net input-text">GPIO3</text>
+    <text x="832" y="526" text-anchor="end" class="net input-text">GPIO4</text>
+    <path id="sensor-vcc" class="input" d="M856 370 H1070"/>
+    <path id="sensor-gnd" class="input" d="M856 420 H1070"/>
+    <path id="sensor-sda" class="input" d="M856 470 H1070"/>
+    <path id="sensor-scl" class="input" d="M856 520 H1070"/>
+    <g fill="#2563eb">
+      <circle cx="856" cy="370" r="4"/>
+      <circle cx="1070" cy="370" r="4"/>
+      <circle cx="856" cy="420" r="4"/>
+      <circle cx="1070" cy="420" r="4"/>
+      <circle cx="856" cy="470" r="4"/>
+      <circle cx="1070" cy="470" r="4"/>
+      <circle cx="856" cy="520" r="4"/>
+      <circle cx="1070" cy="520" r="4"/>
+    </g>
+    <text x="1092" y="376" class="net input-text">VCC</text>
+    <text x="1292" y="376" text-anchor="end" class="small">3,3 В</text>
+    <text x="1092" y="426" class="net input-text">GND</text>
+    <text x="1092" y="476" class="net input-text">SDA</text>
+    <text x="1092" y="526" class="net input-text">SCL</text>
+    <text x="724" y="584" class="small">Нагреватель выключен · выводы сверить с шелкографией.</text>
+  </g>
+
+  <g id="encoder">
+    <rect x="60" y="650" width="1280" height="504" rx="12" class="panel"/>
+    <text x="84" y="686" class="heading">03 · Управление энкодером</text>
+    <text x="84" y="717" class="small">Одинаковые имена сетей соединены. C — общий энкодера, не обозначение коллектора.</text>
+
+    <g id="channel-a">
+      <text x="256" y="776" text-anchor="end" class="net input-text">GPIO5</text>
+      <path class="input" d="M274 770 H380 M460 770 H624 M542 812 H624"/>
+      <rect x="380" y="760" width="80" height="20" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+      <text x="420" y="748" text-anchor="middle" class="mono">R1 · 1.2k</text>
+      <text x="520" y="818" text-anchor="end" class="net input-text">GND</text>
+      <rect x="624" y="744" width="180" height="94" rx="7" class="body"/>
+      <text x="636" y="776" class="pin">1</text>
+      <text x="636" y="818" class="pin">2</text>
+      <text x="784" y="776" class="pin">4</text>
+      <text x="784" y="818" class="pin">3</text>
+      <text x="714" y="779" text-anchor="middle" class="part">U1</text>
+      <text x="714" y="807" text-anchor="middle" class="part-type">PC817C</text>
+      <path class="output" d="M804 770 H1038 M804 812 H1038"/>
+      <circle cx="1038" cy="770" r="4" fill="#c2410c"/>
+      <circle cx="1038" cy="812" r="4" fill="#c2410c"/>
+      <text x="1060" y="776" class="net output-text">A</text>
+      <text x="1116" y="776" class="small">канал энкодера</text>
+      <text x="1060" y="818" class="net output-text">C</text>
+      <text x="1116" y="818" class="small">общий энкодера</text>
+    </g>
+
+    <g id="channel-b" transform="translate(0 120)">
+      <text x="256" y="776" text-anchor="end" class="net input-text">GPIO6</text>
+      <path class="input" d="M274 770 H380 M460 770 H624 M542 812 H624"/>
+      <rect x="380" y="760" width="80" height="20" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+      <text x="420" y="748" text-anchor="middle" class="mono">R2 · 1.2k</text>
+      <text x="520" y="818" text-anchor="end" class="net input-text">GND</text>
+      <rect x="624" y="744" width="180" height="94" rx="7" class="body"/>
+      <text x="636" y="776" class="pin">1</text>
+      <text x="636" y="818" class="pin">2</text>
+      <text x="784" y="776" class="pin">4</text>
+      <text x="784" y="818" class="pin">3</text>
+      <text x="714" y="779" text-anchor="middle" class="part">U2</text>
+      <text x="714" y="807" text-anchor="middle" class="part-type">PC817C</text>
+      <path class="output" d="M804 770 H1038 M804 812 H1038"/>
+      <circle cx="1038" cy="770" r="4" fill="#c2410c"/>
+      <circle cx="1038" cy="812" r="4" fill="#c2410c"/>
+      <text x="1060" y="776" class="net output-text">B</text>
+      <text x="1116" y="776" class="small">канал энкодера</text>
+      <text x="1060" y="818" class="net output-text">C</text>
+      <text x="1116" y="818" class="small">общий энкодера</text>
+    </g>
+
+    <g id="channel-button" transform="translate(0 240)">
+      <text x="256" y="776" text-anchor="end" class="net input-text">GPIO7</text>
+      <path class="input" d="M274 770 H380 M460 770 H624 M542 812 H624"/>
+      <rect x="380" y="760" width="80" height="20" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+      <text x="420" y="748" text-anchor="middle" class="mono">R3 · 1.2k</text>
+      <text x="520" y="818" text-anchor="end" class="net input-text">GND</text>
+      <rect x="624" y="744" width="180" height="94" rx="7" class="body"/>
+      <text x="636" y="776" class="pin">1</text>
+      <text x="636" y="818" class="pin">2</text>
+      <text x="784" y="776" class="pin">4</text>
+      <text x="784" y="818" class="pin">3</text>
+      <text x="714" y="779" text-anchor="middle" class="part">U3</text>
+      <text x="714" y="807" text-anchor="middle" class="part-type">PC817C</text>
+      <path class="output" d="M804 770 H1038 M804 812 H1038"/>
+      <circle cx="1038" cy="770" r="4" fill="#c2410c"/>
+      <circle cx="1038" cy="812" r="4" fill="#c2410c"/>
+      <text x="1060" y="776" class="net output-text">SW+</text>
+      <text x="1116" y="776" class="small">кнопка</text>
+      <text x="1060" y="818" class="net output-text">SW-</text>
+      <text x="1116" y="818" class="small">кнопка</text>
+    </g>
+
+    <text x="84" y="1102" class="label">SW+ — вывод кнопки с более высоким потенциалом; SW- — с более низким.</text>
+    <text x="84" y="1130" class="heading">На адаптере SW+ / SW- не соединять с C.</text>
+  </g>
+
+  <rect x="60" y="1176" width="1280" height="144" rx="12" fill="#eff6ff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="84" y="1206" class="label">PC817C: pin 1 — анод LED; pin 2 — катод LED; pin 4 — коллектор; pin 3 — эмиттер.</text>
+  <text x="84" y="1238" class="label">USB — только после отсоединения от сушилки всех проводов адаптера.</text>
+  <text x="84" y="1270" class="heading">Никогда не подавать USB и внешние 3,3 В одновременно.</text>
+  <circle cx="90" cy="1299" r="4" fill="#172033"/>
+  <text x="108" y="1305" class="small">Точка — соединение. Одинаковые имена сетей — одна цепь; GND везде означает общую землю.</text>
 </svg>
